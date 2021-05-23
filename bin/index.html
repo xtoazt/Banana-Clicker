@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Banana Clicker - v.0.0.5</title>
+	</head>
+	<body>
+		<center>
+		<h1>Banana Clicker</h1>
+		</center>
+		<center>
+		<h2 id="whomadethisatrocity">A game by javaspence</h2>
+		</center>
+		<center>
+		<h1>Bananas: <span id="counter">0</span></h1>
+		<br>
+		<img src="banana.png" id="banana" style="width: 250px" onClick="increment()">
+		</center>
+		<center><h4><span id="upgrade-clicks-current">Current: 1 per click</span></h2></center>
+		<center><h4><span id="upgrade-clicks-next">Next: 2 per click</span></h2></center>
+		<center><button id="upgrade-clicks-button">Click to upgrade!</button></center>
+	</body>
+	<script>
+		var bananas = 0;
+		function increment(){
+			bananas = bananas + 1;
+			counter.innerHTML = bananas;
+			
+		}
+	
+	</script>
+	<style>
+		@font-face {
+			font-family: 'MyWebFont';
+			src: url('Adult-Swim-Font.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			 url('Adult-Swim-Font.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+		}  
+		
+		#whomadethisatrocity {
+			font-family: MyWebFont, monospace;
+		}
+	</style>
+</html>
