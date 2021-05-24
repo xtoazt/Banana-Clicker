@@ -1,0 +1,41 @@
+<!--
+I want to find someway to insert the following javascript:
+			function clickUpgrade(){
+				if (bananas > 100) {
+					var click = 2
+					upgrade-clicks-current.innerHTML = "Current: 2 per click"
+					upgrade-clicks-next.innerHTML = "Next: 5 per click"
+					upgrade-clicks-cost.innerHTML = "Cost: 1000 Bananas"
+				    
+				}
+			}
+Everytime I try, the function "increment()" randomly stops working.
+There's got to be a way around this.
+-Spencer
+
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Banana Clicker - v.0.0.5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+	</head>
+	<body>
+		<center>
+		<h1>Banana Clicker</h1>
+		</center>
+		<center>
+		<h2 id="whomadethisatrocity">A game by javaspence</h2>
+		</center>
+		<center>
+		<h1>Bananas: <span id="counter">0</span></h1>
+		<br>
+		<img src="../assets/banana.png" id="banana" style="width: 250px" onClick="increment()">
+		</center>
+		<!-- <center><h4><span id="upgrade-clicks-current">Current: 1 per click</span></h2></center>
+		<center><h4><span id="upgrade-clicks-next">Next: 2 per click</span></h2></center>
+		<center><h4><span id="upgrade-clicks-cost">Cost: 100 Bananas</span></h4></center>
+		<center><button id="upgrade-clicks-button">Click to upgrade!</button></center> -->
+	</body>
+</html>
