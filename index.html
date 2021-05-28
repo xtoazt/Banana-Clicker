@@ -7,24 +7,25 @@
 	</head>
 	<body>
 		<center>
-		<h1 id="title">Banana Clicker</h1>
+			<h1 id="title">Banana Clicker</h1>
 		</center>
 		<center>
-		<h2 id="whomadethisatrocity">A game by javaspence</h2>
+			<h2 id="whomadethisatrocity">A game by javaspence</h2>
 		</center>
 		<center>
-		<h1 class="garbage">Bananas: <span id="counter">0</span></h1>
+			<h1 class="garbage">Bananas: <span id="counter">0</span></h1>
 		<br>
-		<img src="assets/banana.png" id="banana" style="width: 250px" onClick="increment()">
+		<img src="../assets/banana.png" id="banana" style="width: 250px" onClick="increment()">
     		<br>
     		<br>
-    		<button type="button" onClick="upgrade()">Upgrade Click!<br>Current Power: <span id="curclickpwr">1</span><br>Next Power: <span id="nextclickpwr">2</span><br>Next Power Cost: <span id="nextclickcost">100</span></button>
+    		<button type="button" style="display: block;" onClick="upgrade()" id="upgradeButton1">Upgrade Click!</button>
+    		<button type="button" style="display: none;" onClick="upgrade()" id="upgradeButton2">Upgrade Click!</button>
+    		<p style="color: black;">Current Power: <span id="curclickpwr">1</span><br>Next Power: <span id="nextclickpwr">2</span><br>Next Power Cost: <span id="nextclickcost">100</span></p>
     		<br>
     		<br>
-    		<!-- <button type="button" onClick="autoclickmult()">Upgrade Autoclick!<br>Current Bps: <span id="curbps">0</span><br>Next Bps: <span id="nextbps">1</span><br>Next Bps Cost: <span id="nextbpscost">100</span></button> -->
 		</center>
-		<footer>
-      		<center><p>&copy;2021 OnlyFans Games, Ltd.</p></center>
+    		<footer>
+      			<center><p style="color: white">&copy;2021 OnlyFans Games, Ltd.</p></center>
     		</footer>
-	</body>
+		</body>
 </html>
