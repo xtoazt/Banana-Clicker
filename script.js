@@ -15,6 +15,7 @@ function upgrade(){
       click = 2;
     }
   }
+
   if (click == 2){
     if (bananas > 500){
       bananas = bananas - 500;
@@ -25,6 +26,7 @@ function upgrade(){
       click = 5;
     }
   }
+
   if (click == 5){
     if (bananas > 2500){
       bananas = bananas - 2500;
@@ -35,6 +37,7 @@ function upgrade(){
       click = 10;
     }
   }
+
   if (click == 10){
     if (bananas > 5500){
       bananas = bananas - 5500;
@@ -45,6 +48,7 @@ function upgrade(){
       click = 20;
     }
   }
+
   if (click == 20){
     if (bananas > 10000){
       bananas = bananas - 10000;
@@ -58,6 +62,7 @@ function upgrade(){
       click = 50;
     }
   }
+
   if (click == 50){
     if (bananas > 25000){
       bananas = bananas - 25000;
@@ -69,5 +74,18 @@ function upgrade(){
       document.getElementById("nextclickcost").innerHTML = "50000";
       click = 100;
     }
+  }
+
+  if (click == 100){
+    
+  }
+  if (click == 200){
+
+  }
+  if (click == 400){
+
+  }
+  if (click == 1000){
+
   }
 }
