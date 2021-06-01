@@ -1,5 +1,6 @@
 var bananas = 0;
 var click = 1;
+var autoclickPower = 0;
 function increment(){
 	bananas = bananas + click;
 	document.getElementById("counter").innerHTML = bananas;
