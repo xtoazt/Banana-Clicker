@@ -6,7 +6,7 @@
 		<link rel="icon" href="assets/bananafavicon.jpg">
 		<script src="script.js"></script>
 	</head>
-	<body>
+	<body onload="myFunction()">
 		<center>
 			<h1 id="title">Banana Clicker</h1>
 		</center>
@@ -29,4 +29,9 @@
       			<center><p style="color: white">&copy;2021 OnlyFans Games, Ltd.</p></center>
     		</footer>
 		</body>
+		<script>
+    			function myFunction() {
+     				setInterval(function(){ bananas = bananas + autoclickPower; document.getElementById("counter").innerHTML = bananas }, 1000);
+  			}
+		</script>
 </html>
