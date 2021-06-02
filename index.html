@@ -1,37 +1,44 @@
+<!--
+Hello. My name is javaspence and this is my knockoff
+Cookie Clicker-style incremental game. I just made this
+to learn javascript and don't plan to make any money
+off of it. Alright, don't enjoy!
+-javaspence
+-->
+
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Banana Clicker - v.0.0.5</title>
-    		<link rel="stylesheet" href="style.css">
-		<link rel="icon" href="assets/bananafavicon.jpg">
-		<script src="script.js"></script>
+		<title id="topcounter">0 Bananas - Banana Clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../assets/bananafavicon.jpg">
+    <script src="script.js"></script>
 	</head>
-	<body onload="myFunction()">
+	<body onload="myFunction(); achievements()">
 		<center>
-			<h1 id="title">Banana Clicker</h1>
+		<h1 id="title">Banana Clicker</h1>
+    <h2 id="holiday" style="display: none;"></h2>
+    <h2 id="testday"></h2>
+    <h2 id="testmonth"></h2>
 		</center>
 		<center>
-			<h2 id="whomadethisatrocity">A game by javaspence</h2>
+		<h2 id="whomadethisatrocity">A game by javaspence</h2>
 		</center>
 		<center>
-			<h1 class="garbage">Bananas: <span id="counter">0</span></h1>
+		<h1 class="garbage">Bananas: <span id="counter">0</span></h1>
 		<br>
-		<img src="assets/banana.png" id="banana" style="width: 250px" onClick="increment()">
-    		<br>
-    		<br>
-    		<button type="button" style="display: block;" onClick="upgrade()" id="upgradeButton1">Upgrade Click!</button>
-    		<button type="button" style="display: none;" onClick="upgrade()" id="upgradeButton2">Upgrade Click!</button>
-    		<p style="color: black;">Current Power: <span id="curclickpwr">1</span><br>Next Power: <span id="nextclickpwr">2</span><br>Next Power Cost: <span id="nextclickcost">100</span></p>
-    		<br>
-    		<br>
+		<img src="../assets/banana.png" id="banana" style="width: 250px" onClick="increment()">
+    <br>
+    <br>
+    <button type="button" style="display: block;" onClick="upgrade()" id="upgradeButton1">Upgrade Click!</button>
+    <p style="color: black;">Current Power: <span id="curclickpwr">1</span><br>Next Power: <span id="nextclickpwr">2</span><br>Next Power Cost: <span id="nextclickcost">100</span></p>
+    <button type="button" style="display: block;" onClick="upgradeAutoclick()">Upgrade Autoclick!</button>
+    <p style="color: black;">Current Power: <span id="curautoclick">0</span><br>Next Power: <span id="nextautoclick">1</span><br>Next Power Cost: <span id="nextautoclickcost">100</span></p>
+    <br>
+    <pre id="showachievements"></pre>
 		</center>
-    		<footer>
-      			<center><p style="color: white">&copy;2021 OnlyFans Games, Ltd.</p></center>
-    		</footer>
-		</body>
-		<script>
-    			function myFunction() {
-     				setInterval(function(){ bananas = bananas + autoclickPower; document.getElementById("counter").innerHTML = bananas }, 1000);
-  			}
-		</script>
+    <footer>
+      <center><p style="color: black">&copy;2021 OnlyFans Games, Ltd.</p></center>
+    </footer>
+	</body>
 </html>
