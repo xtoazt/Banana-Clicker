@@ -8,6 +8,7 @@ var autoclickPower = 0;
 function increment(){
 	bananas = bananas + click;
 	document.getElementById("counter").innerHTML = bananas;
+  document.getElementById("topcounter").innerHTML = bananas + " Bananas - Banana Clicker";
 }
 // this function is click upgrades, I didn't make it clear when I named the function
 function upgrade(){
@@ -149,9 +150,72 @@ function upgradeAutoclick(){
   }
 }
 function myFunction() {
-  setInterval(function(){ bananas = bananas + autoclickPower; document.getElementById("counter").innerHTML = bananas }, 1000);
+  setInterval(function(){ bananas = bananas + autoclickPower; document.getElementById("counter").innerHTML = bananas; document.getElementById("topcounter").innerHTML = bananas + " Bananas - Banana Clicker"; }, 1000);
 }
 // call this in the javascript console by pressing F12 and clicking on console and typing "dev();"
 function dev() {
   bananas = bananas + 100000000000000000;
+}
+function achievements() {
+  setInterval(function(){
+    if (bananas == 1){
+      var achievement1 = localStorage.getItem('achievement1') || '';
+      if (achievement1 != 'yes') {
+        alert("Achievement Unlocked: Baby Steps");
+        localStorage.setItem('achievement1','yes');
+      }
+    }
+    if (bananas == 10){
+      var achievement2 = localStorage.getItem('achievement2') || '';
+      if (achievement2 != 'yes') {
+        alert("Achievement Unlocked: It's Something");
+        localStorage.setItem('achievement2','yes');
+      }
+    }
+    if (bananas == 50){
+      var achievement3 = localStorage.getItem('achievement3') || '';
+      if (achievement3 != 'yes') {
+        alert("Achievement Unlocked: Halfway to Triple Digits");
+        localStorage.setItem('achievement3','yes');
+      }
+    }
+    if (bananas == 69){
+      var achievement4 = localStorage.getItem('achievement4') || '';
+      if (achievement4 != 'yes') {
+        alert("Achievement Unlocked: haha funny number");
+        localStorage.setItem('achievement4','yes');
+      }
+    }
+    if (bananas == 100){
+      var achievement5 = localStorage.getItem('achievement5') || '';
+      if (achievement5 != 'yes') {
+        alert("Achievement Unlocked: Triple Digits");
+        localStorage.setItem('achievement5','yes');
+      }
+    }
+    if (bananas <= 1000 && click == 2 && autoclickPower == 0){
+      var achievement6 = localStorage.getItem('achievement6') || '';
+      if (achievement6 != 'yes'){
+        alert("Achievement Unlocked: Taking the Shortcut");
+        localStorage.setItem('achievement6', 'yes');
+      }
+    }
+    if (bananas <= 1000 && click == 1 && autoclickPower == 1){
+      var achievement7 = localStorage.getItem('achievement7') || '';
+      if (achievement7 != 'yes'){
+        alert("Achievement Unlocked: Taking the Scenic Route");
+        localStorage.setItem('achievement7', 'yes');
+      }
+    }
+    if (click == 5 && autoclickPower == 5){
+      var achievement8 = localStorage.getItem('achievement8') || '';
+      if (achievement8 != 'yes'){
+        alert("Achievement Unlocked: Let's Count by 5s!");
+        localStorage.setItem('achievement8', 'yes');
+      }
+    }
+  }, 5);
+}
+function deleteAllCookies() {
+  localStorage.clear();
 }
