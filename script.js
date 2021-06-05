@@ -163,6 +163,8 @@ function achievements() {
       if (achievement1 != 'yes') {
         alert("Achievement Unlocked: Baby Steps");
         localStorage.setItem('achievement1','yes');
+        localStorage.setItem('achievement1visual','show')
+        setIfLocalStorage();
       }
     }
     if (bananas == 10){
@@ -170,6 +172,8 @@ function achievements() {
       if (achievement2 != 'yes') {
         alert("Achievement Unlocked: It's Something");
         localStorage.setItem('achievement2','yes');
+        localStorage.setItem('achievement2visual','show')
+        setIfLocalStorage();
       }
     }
     if (bananas == 50){
@@ -177,6 +181,8 @@ function achievements() {
       if (achievement3 != 'yes') {
         alert("Achievement Unlocked: Halfway to Triple Digits");
         localStorage.setItem('achievement3','yes');
+        localStorage.setItem('achievement3visual','show')
+        setIfLocalStorage();
       }
     }
     if (bananas == 69){
@@ -184,6 +190,8 @@ function achievements() {
       if (achievement4 != 'yes') {
         alert("Achievement Unlocked: haha funny number");
         localStorage.setItem('achievement4','yes');
+        localStorage.setItem('achievement4visual','show')
+        setIfLocalStorage();
       }
     }
     if (bananas == 100){
@@ -191,6 +199,8 @@ function achievements() {
       if (achievement5 != 'yes') {
         alert("Achievement Unlocked: Triple Digits");
         localStorage.setItem('achievement5','yes');
+        localStorage.setItem('achievement5visual','show')
+        setIfLocalStorage();
       }
     }
     if (bananas <= 1000 && click == 2 && autoclickPower == 0){
@@ -198,6 +208,8 @@ function achievements() {
       if (achievement6 != 'yes'){
         alert("Achievement Unlocked: Taking the Shortcut");
         localStorage.setItem('achievement6', 'yes');
+        localStorage.setItem('achievement6visual','show')
+        setIfLocalStorage();
       }
     }
     if (bananas <= 1000 && click == 1 && autoclickPower == 1){
@@ -205,6 +217,8 @@ function achievements() {
       if (achievement7 != 'yes'){
         alert("Achievement Unlocked: Taking the Scenic Route");
         localStorage.setItem('achievement7', 'yes');
+        localStorage.setItem('achievement7visual','show')
+        setIfLocalStorage();
       }
     }
     if (click == 5 && autoclickPower == 5){
@@ -212,10 +226,74 @@ function achievements() {
       if (achievement8 != 'yes'){
         alert("Achievement Unlocked: Let's Count by 5s!");
         localStorage.setItem('achievement8', 'yes');
+        localStorage.setItem('achievement8visual','show')
+        setIfLocalStorage();
       }
     }
   }, 5);
 }
+function setIfLocalStorage() {
+  var achievement1visual = localStorage.getItem('achievement1visual') || '';
+  if (achievement1visual != 'show'){
+    document.getElementById("achievement1visual").innerHTML = 'Locked';
+  }
+  if (achievement1visual == 'show'){
+    document.getElementById("achievement1visual").innerHTML = 'Unlocked';
+  }
+  var achievement2visual = localStorage.getItem('achievement2visual') || '';
+  if (achievement2visual != 'show'){
+    document.getElementById("achievement2visual").innerHTML = 'Locked';
+  }
+  if (achievement2visual == 'show'){
+    document.getElementById("achievement2visual").innerHTML = 'Unlocked';
+  }
+  var achievement3visual = localStorage.getItem('achievement3visual') || '';
+  if (achievement3visual != 'show'){
+    document.getElementById("achievement3visual").innerHTML = 'Locked';
+  }
+  if (achievement3visual == 'show'){
+    document.getElementById("achievement3visual").innerHTML = 'Unlocked';
+  }
+  var achievement4visual = localStorage.getItem('achievement4visual') || '';
+  if (achievement4visual != 'show'){
+    document.getElementById("achievement4visual").innerHTML = 'Locked';
+  }
+  if (achievement4visual == 'show'){
+    document.getElementById("achievement4visual").innerHTML = 'Unlocked';
+  }
+  var achievement5visual = localStorage.getItem('achievement5visual') || '';
+  if (achievement5visual != 'show'){
+    document.getElementById("achievement5visual").innerHTML = 'Locked';
+  }
+  if (achievement5visual == 'show'){
+    document.getElementById("achievement5visual").innerHTML = 'Unlocked';
+  }
+  var achievement6visual = localStorage.getItem('achievement6visual') || '';
+  if (achievement6visual != 'show'){
+    document.getElementById("achievement6visual").innerHTML = 'Locked';
+  }
+  if (achievement6visual == 'show'){
+    document.getElementById("achievement6visual").innerHTML = 'Unlocked';
+  }
+  var achievement7visual = localStorage.getItem('achievement7visual') || '';
+  if (achievement7visual != 'show'){
+    document.getElementById("achievement7visual").innerHTML = 'Locked';
+  }
+  if (achievement7visual == 'show'){
+    document.getElementById("achievement7visual").innerHTML = 'Unlocked';
+  }
+  var achievement8visual = localStorage.getItem('achievement8visual') || '';
+  if (achievement8visual != 'show'){
+    document.getElementById("achievement8visual").innerHTML = 'Locked';
+  }
+  if (achievement8visual == 'show'){
+    document.getElementById("achievement8visual").innerHTML = 'Unlocked';
+  }
+}
 function deleteAllCookies() {
   localStorage.clear();
 }
+/* function gayboi69420(){
+  var dumb = window.prompt("r u gay?")
+  console.log(dumb)
+} */
