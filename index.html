@@ -14,31 +14,52 @@ off of it. Alright, don't enjoy!
     <link rel="icon" href="assets/bananafavicon.jpg">
     <script src="script.js"></script>
 	</head>
-	<body onload="myFunction(); achievements()">
-		<center>
-		<h1 id="title">Banana Clicker</h1>
-    <h2 id="holiday" style="display: none;"></h2>
-    <h2 id="testday"></h2>
-    <h2 id="testmonth"></h2>
+	<body onload="myFunction(); achievements(); setIfLocalStorage();">
+    <div id="main">
+		  <div id="upgrades">
+        <center>
+          <br>
+          <button type="button" style="display: block;" class="button" onClick="upgrade()" id="upgradeButton1">Upgrade Click!</button>
+          <b>
+          <p style="color: black;" class="general">Current Power: <span id="curclickpwr">1</span><br>Next Power: <span id="nextclickpwr">2</span><br>Next Power Cost: <span id="nextclickcost">100</span></p>
+          </b>
+          <button type="button" style="display: block;"  class="button" onClick="upgradeAutoclick()">Upgrade Autoclick!</button>
+          <b>
+          <p style="color: black;" class="general">Current Power: <span id="curautoclick">0</span><br>Next Power: <span id="nextautoclick">1</span><br>Next Power Cost: <span id="nextautoclickcost">100</span></p>
+          </b>
+          <button type="button" style="color: red; background-color: white;" class="button" onClick="deleteAllCookies();">WIPE</button>
+		    </center>
+      </div>
+      <div id="click area">
+        <center>
+		      <h1 class="garbage">Bananas: <span id="counter">0</span></h1>
+		      <br>
+		      <img src="assets/banana.png" id="banana" style="width: 250px" onClick="increment()">
+        <center>
+      </div>
+    </div>
+    <div id="gameinfo">
+      <center>
+      <h1 id="title">Banana Clicker</h1>
+		  <h2 id="whomadethisatrocity">A game by javaspence</h2>
+      <h3 class="general">Dev Version 0.2-beta</h3>
+      <h3 class="general"><a href="https://github.com/javaspence/Banana-Clicker" target="_blank">Github</a></h3>
+      <h3 class="general"><a href="https://banana-clicker.javaspence.repl.co/" target="_blank">Repl.it (Dev Version)</a></h3>
+      </center>
 		</center>
-		<center>
-		<h2 id="whomadethisatrocity">A game by javaspence</h2>
-		</center>
-		<center>
-		<h1 class="garbage">Bananas: <span id="counter">0</span></h1>
-		<br>
-		<img src="assets/banana.png" id="banana" style="width: 250px" onClick="increment()">
-    <br>
-    <br>
-    <button type="button" style="display: block;" onClick="upgrade()" id="upgradeButton1">Upgrade Click!</button>
-    <p style="color: black;">Current Power: <span id="curclickpwr">1</span><br>Next Power: <span id="nextclickpwr">2</span><br>Next Power Cost: <span id="nextclickcost">100</span></p>
-    <button type="button" style="display: block;" onClick="upgradeAutoclick()">Upgrade Autoclick!</button>
-    <p style="color: black;">Current Power: <span id="curautoclick">0</span><br>Next Power: <span id="nextautoclick">1</span><br>Next Power Cost: <span id="nextautoclickcost">100</span></p>
-    <br>
-    <pre id="showachievements"></pre>
-		</center>
-    <footer>
-      <center><p style="color: black">&copy;2021 OnlyFans Games, Ltd.</p></center>
-    </footer>
+    </div>
+    <div id="achievementsboard">
+      <center>
+      <h1 class="general">Unlocked Achievements</h1>
+      <p class="general">Baby Steps: <span id="achievement1visual">Locked</span></p>
+      <p class="general">It's Something: <span id="achievement2visual">Locked</span></p>
+      <p class="general">Halfway to Triple Digits: <span id="achievement3visual">Locked</span></p>
+      <p class="general">haha funny number: <span id="achievement4visual">Locked</span></p>
+      <p class="general">Triple Digits: <span id="achievement5visual">Locked</span></p>
+      <p class="general">Taking the Shortcut: <span id="achievement6visual">Locked</span></p>
+      <p class="general">Taking the Scenic Route: <span id="achievement7visual">Locked</span></p>
+      <p class="general">Let's Count By 5s!: <span id="achievement8visual">Locked</span></p>
+      </center>
+    </div>
 	</body>
 </html>
