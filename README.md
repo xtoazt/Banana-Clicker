@@ -14,3 +14,6 @@ First official release, and built in HTML, CSS, and JS. Works just fine however 
 
 ### v0.1-alpha:
 Second release, this time includes autoclick, which I neglected to mention in the release, but also includes achievements, which is pretty cool.
+
+### v0.2-beta:
+Looks much better and also includes a div element where you can see your unlocked achievements. That's about it.
