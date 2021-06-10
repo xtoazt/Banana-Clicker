@@ -21,15 +21,15 @@
   border-style: outset;
   border-width: thick;
   width: 200px;
-  height: 300px;
+  height: 350px;
   background:blue;
   float: left;
 }
 #main { 
-    width: 800px;
+    width: 700px;
     margin: 0 auto;
 }
-#clickarea  {
+#click area  {
   width: 600px;
   background: #ffffff;
   height: 400px;
@@ -40,16 +40,30 @@
   width: 50%;
   border: 3px solid green;
   padding: 10px;
+  background: rgb(250,249,0);
+  background: linear-gradient(90deg, rgba(250,249,0,1) 0%, rgba(25,121,9,1) 19%, rgba(11,198,255,1) 66%, rgba(0,89,255,1) 100%);
 }
 #achievementsboard {
   border-style: outset;
   border: 5px solid blue;
   margin: auto;
-  width: 75%; 
+  width: 50%;
+  background: rgb(249,101,116);
+  background: linear-gradient(90deg, rgba(249,101,116,1) 0%, rgba(153,190,27,1) 66%);
 }
 .general {
   font-family: 'Poppins', monospace;
 }
 .button {
   font-family: 'ZCOOL KuaiLe', cursive;
+}
+body {
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);
+}
+#counter {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#ffd54d, #f52549);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
