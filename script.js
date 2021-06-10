@@ -339,6 +339,12 @@ function bananasLocalSet() {
   var localbananasbro = parseInt(bananasLocal);
   console.log(bananasLocal);
   console.log(localbananasbro);
+  if (Number.isNaN(localbananasbro)){
+	  localbananasbro = 0;
+	  bananas = 0;
+	  document.getElementById("counter").innerHTML = bananas;
+  	  document.getElementById("topcounter").innerHTML = bananas + " Bananas - Banana Clicker";
+  }	   
   bananas = localbananasbro;
   document.getElementById("counter").innerHTML = bananas;
   document.getElementById("topcounter").innerHTML = bananas + " Bananas - Banana Clicker";
