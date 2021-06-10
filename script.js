@@ -418,6 +418,9 @@ function autoupgradesSet(){
     localStorage.setItem('autoupgradesLocal', JSON.stringify(autoclickPower));
   }
 }
+function revealimportant(){
+  document.getElementById("hiddenimportant").style.display = "block";
+}
 /* function gayboi69420(){
   var dumb = window.prompt("r u gay?")
   console.log(dumb)
