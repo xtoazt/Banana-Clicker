@@ -4,11 +4,16 @@
 var bananas = 0;
 var click = 1;
 var autoclickPower = 0;
+var bananasLocal = localStorage.getItem('bananasLocal');
+var clickupgradesLocal = localStorage.getItem('clickupgradesLocal');
+var autoupgradesLocal = localStorage.getItem('autoupgradesLocal');
+var localclickupgrades = parseInt(clickupgradesLocal);
 // don't name a function click() because it's reserved (for something else in JS). I learned that the hard way
 function increment(){
 	bananas = bananas + click;
 	document.getElementById("counter").innerHTML = bananas;
   document.getElementById("topcounter").innerHTML = bananas + " Bananas - Banana Clicker";
+  localStorage.setItem('bananasLocal', JSON.stringify(bananas));
 }
 // this function is click upgrades, I didn't make it clear when I named the function
 function upgrade(){
@@ -22,6 +27,7 @@ function upgrade(){
       document.getElementById("nextclickpwr").innerHTML = "5";
       document.getElementById("nextclickcost").innerHTML = "500";
       click = 2;
+      localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
     }
   }
 
@@ -33,6 +39,7 @@ function upgrade(){
       document.getElementById("nextclickpwr").innerHTML = "10";
       document.getElementById("nextclickcost").innerHTML = "2500";
       click = 5;
+      localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
     }
   }
 
@@ -44,6 +51,7 @@ function upgrade(){
       document.getElementById("nextclickpwr").innerHTML = "20";
       document.getElementById("nextclickcost").innerHTML = "5500";
       click = 10;
+      localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
     }
   }
 
@@ -55,6 +63,7 @@ function upgrade(){
       document.getElementById("nextclickpwr").innerHTML = "50";
       document.getElementById("nextclickcost").innerHTML = "10000";
       click = 20;
+      localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
     }
   }
 
@@ -69,6 +78,7 @@ function upgrade(){
       "100";
       document.getElementById("nextclickcost").innerHTML = "25000";
       click = 50;
+      localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
     }
   }
 
@@ -82,6 +92,7 @@ function upgrade(){
       "200";
       document.getElementById("nextclickcost").innerHTML = "50000";
       click = 100;
+      localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
     }
   }
 
@@ -95,6 +106,7 @@ function upgrade(){
       "400";
       document.getElementById("nextclickcost").innerHTML = "69420";
       click = 200;
+      localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
     }
   }
 
@@ -108,6 +120,7 @@ function upgrade(){
       "1000";
       document.getElementById("nextclickcost").innerHTML = "400000";
       click = 400;
+      localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
     }
   }
 
@@ -121,6 +134,7 @@ function upgrade(){
       "???";
       document.getElementById("nextclickcost").innerHTML = "???";
       click = 1000;
+      localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
     }
   }
 }
@@ -135,6 +149,7 @@ function upgradeAutoclick(){
       document.getElementById("nextautoclickcost").innerHTML = "500";
       // Don't ever use "==" when setting a variable again!
       autoclickPower = 1;
+      localStorage.setItem('autoupgradesLocal', JSON.stringify(autoclickPower));
     }
   }
   if (autoclickPower == 1){
@@ -146,11 +161,24 @@ function upgradeAutoclick(){
       "10";
       document.getElementById("nextautoclickcost").innerHTML = "1050";
       autoclickPower = 5;
+      localStorage.setItem('autoupgradesLocal', JSON.stringify(autoclickPower));
+    }
+  }
+  if (autoclickPower == 5){
+    if (bananas >= 1050){
+      bananas = bananas - 1050;
+      document.getElementById("counter").innerHTML = bananas;
+      document.getElementById("curautoclick").innerHTML = "10";
+      document.getElementById("nextautoclick").innerHTML =
+      "20";
+      document.getElementById("nextautoclickcost").innerHTML = "2150";
+      autoclickPower = 10;
+      localStorage.setItem('autoupgradesLocal', JSON.stringify(autoclickPower));
     }
   }
 }
 function myFunction() {
-  setInterval(function(){ bananas = bananas + autoclickPower; document.getElementById("counter").innerHTML = bananas; document.getElementById("topcounter").innerHTML = bananas + " Bananas - Banana Clicker"; }, 1000);
+  setInterval(function(){ bananas = bananas + autoclickPower; document.getElementById("counter").innerHTML = bananas; document.getElementById("topcounter").innerHTML = bananas + " Bananas - Banana Clicker"; localStorage.setItem('bananasLocal', JSON.stringify(bananas)); }, 1000);
 }
 // call this in the javascript console by pressing F12 and clicking on console and typing "dev();"
 function dev() {
@@ -290,8 +318,99 @@ function setIfLocalStorage() {
     document.getElementById("achievement8visual").innerHTML = 'Unlocked';
   }
 }
-function deleteAllCookies() {
+function localstoragewipe() {
   localStorage.clear();
+  window.localStorage.clear();
+  bananas = 0;
+  localStorage.setItem('bananasLocal', JSON.stringify(bananas));
+  document.getElementById("counter").innerHTML = bananas;
+  document.getElementById("topcounter").innerHTML = bananas + " Bananas - Banana Clicker";
+  click = 1;
+  autoclickPower = 0;
+  document.getElementById("curclickpwr").innerHTML = "1";
+  document.getElementById("nextclickpwr").innerHTML = "2";
+  document.getElementById("nextclickcost").innerHTML = "100";
+  document.getElementById("curautoclick").innerHTML = "0";
+  document.getElementById("nextautoclick").innerHTML = "1";
+  document.getElementById("nextautoclickcost").innerHTML = "100";
+  
+}
+function bananasLocalSet() {
+  var localbananasbro = parseInt(bananasLocal);
+  console.log(bananasLocal);
+  console.log(localbananasbro);
+  bananas = localbananasbro;
+  document.getElementById("counter").innerHTML = bananas;
+  document.getElementById("topcounter").innerHTML = bananas + " Bananas - Banana Clicker";
+}
+function clickupgradesSet(){
+  console.log("clickupgradesLocal: " + localclickupgrades);
+  if (localclickupgrades == 2){
+    document.getElementById("counter").innerHTML = bananas;
+    document.getElementById("curclickpwr").innerHTML = "2";
+    document.getElementById("nextclickpwr").innerHTML = "5";
+    document.getElementById("nextclickcost").innerHTML = "500";
+    click = 2;
+    localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
+  }
+  if (localclickupgrades == 5){
+    document.getElementById("counter").innerHTML = bananas;
+    document.getElementById("curclickpwr").innerHTML = "5";
+    document.getElementById("nextclickpwr").innerHTML = "10";
+    document.getElementById("nextclickcost").innerHTML = "2500";
+    click = 5;
+    localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
+  }
+  if (localclickupgrades == 10){
+    document.getElementById("counter").innerHTML = bananas;
+    document.getElementById("curclickpwr").innerHTML = "10";
+    document.getElementById("nextclickpwr").innerHTML = "20";
+    document.getElementById("nextclickcost").innerHTML = "5500";
+    click = 10;
+    localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
+  }
+  if (localclickupgrades == 20){
+    document.getElementById("counter").innerHTML = bananas;
+    document.getElementById("curclickpwr").innerHTML = "20";
+    document.getElementById("nextclickpwr").innerHTML = "50";
+    document.getElementById("nextclickcost").innerHTML = "10000";
+    click = 20;
+    localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
+  }
+  if (localclickupgrades == 50){
+    document.getElementById("counter").innerHTML = bananas;
+    document.getElementById("curclickpwr").innerHTML = "50";
+    document.getElementById("nextclickpwr").innerHTML = "100";
+    document.getElementById("nextclickcost").innerHTML = "25000";
+    click = 50;
+    localStorage.setItem('clickupgradesLocal', JSON.stringify(click));
+  }
+}
+function autoupgradesSet(){
+  var localautoupgradesdude = parseInt(autoupgradesLocal);
+  if (localautoupgradesdude == 1){
+    document.getElementById("counter").innerHTML = bananas;
+    document.getElementById("curautoclick").innerHTML = "1";
+    document.getElementById("nextautoclick").innerHTML = "5";
+    document.getElementById("nextautoclickcost").innerHTML = "500";
+    autoclickPower = 1;
+  }
+  if (localautoupgradesdude == 5){
+    document.getElementById("counter").innerHTML = bananas;
+    document.getElementById("curautoclick").innerHTML = "5";
+    document.getElementById("nextautoclick").innerHTML = "10";
+    document.getElementById("nextautoclickcost").innerHTML = "1050";
+    autoclickPower = 5;
+    localStorage.setItem('autoupgradesLocal', JSON.stringify(autoclickPower));
+  }
+  if (localautoupgradesdude == 10){
+    document.getElementById("counter").innerHTML = bananas;
+    document.getElementById("curautoclick").innerHTML = "10";
+    document.getElementById("nextautoclick").innerHTML = "20";
+    document.getElementById("nextautoclickcost").innerHTML = "2150";
+    autoclickPower = 10;
+    localStorage.setItem('autoupgradesLocal', JSON.stringify(autoclickPower));
+  }
 }
 /* function gayboi69420(){
   var dumb = window.prompt("r u gay?")
